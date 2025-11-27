@@ -100,6 +100,10 @@ export class ProductService {
     );
   }
 
+  clearSelectedProduct() {
+    this.#selectedProduct.set(null);
+  }
+
   private invalidateCache(): void {
     this.#products.set([]);
     this.cacheService.clear();

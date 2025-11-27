@@ -43,10 +43,10 @@ export class ProductFormContainerComponent {
   set id(productId: number) {
     this.productId = productId ? Number(productId) : null;
 
+    this.productService.clearSelectedProduct();
+
     if(this.productId)
       this.productService.getProduct(this.productId)
-
-
   }
 
   onSave(formData: Partial<Product>): void {
